@@ -1,0 +1,190 @@
+{
+  "version": "0.4.1",
+  "graph": {
+    "nodes": [
+      {
+        "id": "n0",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "caption": "Book"
+      },
+      {
+        "id": "n2",
+        "position": {
+          "x": 223.0429680240373,
+          "y": 123.96807820978859
+        },
+        "caption": "author"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "n1",
+        "type": "written_by",
+        "fromId": "n0",
+        "toId": "n2"
+      }
+    ]
+  },
+  "dataModel": {
+    "fileModel": {
+      "fileSchemas": {
+        "top100goodreads.csv": {
+          "expanded": true,
+          "fields": [
+            {
+              "name": "rank",
+              "type": "string",
+              "sample": "1",
+              "include": true
+            },
+            {
+              "name": "itemUrl",
+              "type": "string",
+              "sample": "/book/show/2767052-the-hunger-games",
+              "include": true
+            },
+            {
+              "name": "itemTitle",
+              "type": "string",
+              "sample": "The Hunger Games (The Hunger Games, #1)",
+              "include": true
+            },
+            {
+              "name": "author",
+              "type": "string",
+              "sample": "Suzanne Collins",
+              "include": true
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "sample": "Winning will make you famous. Losing means certain death.The nation of Panem, formed from a post-apocalyptic North America, is a country that consists of a wealthy Capitol region surrounded by 12 poorer districts. Early in its history, a rebellion led by a 13th district against the Capitol resulted in its destruction and the creation of an annual televised event known as t\n  Winning will make you famous. Losing means certain death.The nation of Panem, formed from a post-apocalyptic North America, is a country that consists of a wealthy Capitol region surrounded by 12 poorer districts. Early in its history, a rebellion led by a 13th district against the Capitol resulted in its destruction and the creation of an annual televised event known as the Hunger Games. In punishment, and as a reminder of the power and grace of the Capitol, each district must yield one boy and one girl between the ages of 12 and 18 through a lottery system to participate in the games. The 'tributes' are chosen during the annual Reaping and are forced to fight to the death, leaving only one survivor to claim victory.When 16-year-old Katniss's young sister, Prim, is selected as District 12's female representative, Katniss volunteers to take her place. She and her male counterpart Peeta, are pitted against bigger, stronger representatives, some of whom have trained for this their whole lives. , she sees it as a death sentence. But Katniss has been close to death before. For her, survival is second nature.\n  ...more",
+              "include": true
+            },
+            {
+              "name": "genres",
+              "type": "string",
+              "sample": "/genres/young-adult;/genres/fiction;/genres/dystopia;/genres/fantasy;/genres/science-fiction;/genres/romance;/genres/adventure;/genres/teen;/genres/post-apocalyptic;/genres/action",
+              "include": true
+            },
+            {
+              "name": "genrecount",
+              "type": "string",
+              "sample": "25,369 users;13,447 users;12,551 users;10,538 users;8,514 users;3,253 users;3,171 users;1,755 users;1,440 users;1,252 users",
+              "include": true
+            }
+          ]
+        }
+      }
+    },
+    "graphModel": {
+      "nodeSchemas": {
+        "n0": {
+          "label": "Book",
+          "additionLabels": [],
+          "labelProperties": [],
+          "properties": [
+            {
+              "property": "title",
+              "type": "string",
+              "identifier": "7jFYTe-L-1TWM3UGhL_Bj"
+            },
+            {
+              "property": "id",
+              "type": "string",
+              "identifier": "LsIUTdprPgFDTJ6EASuvS"
+            },
+            {
+              "property": "genres",
+              "type": "string",
+              "identifier": "Z_BOYpyDhfiptsY82df28"
+            }
+          ],
+          "key": {
+            "properties": [
+              "LsIUTdprPgFDTJ6EASuvS"
+            ],
+            "name": ""
+          }
+        },
+        "n2": {
+          "label": "author",
+          "additionLabels": [],
+          "labelProperties": [],
+          "properties": [
+            {
+              "property": "Name",
+              "type": "string",
+              "identifier": "MmUUZfZ291gCB_qQCGRzm"
+            }
+          ],
+          "key": {
+            "properties": [
+              "MmUUZfZ291gCB_qQCGRzm"
+            ],
+            "name": ""
+          }
+        }
+      },
+      "relationshipSchemas": {
+        "n1": {
+          "type": "written_by",
+          "sourceNodeSchema": "n0",
+          "targetNodeSchema": "n2",
+          "properties": []
+        }
+      }
+    },
+    "mappingModel": {
+      "nodeMappings": {
+        "n0": {
+          "nodeSchema": "n0",
+          "mappings": [
+            {
+              "field": "itemTitle"
+            },
+            {
+              "field": "itemUrl"
+            },
+            {
+              "field": "genres"
+            }
+          ],
+          "fileSchema": "top100goodreads.csv"
+        },
+        "n2": {
+          "nodeSchema": "n2",
+          "mappings": [
+            {
+              "field": "author"
+            }
+          ],
+          "fileSchema": "top100goodreads.csv"
+        }
+      },
+      "relationshipMappings": {
+        "n1": {
+          "relationshipSchema": "n1",
+          "mappings": [],
+          "sourceMappings": [
+            {
+              "field": "itemUrl"
+            }
+          ],
+          "targetMappings": [
+            {
+              "field": "author"
+            }
+          ],
+          "fileSchema": "top100goodreads.csv"
+        }
+      }
+    },
+    "configurations": {
+      "idsToIgnore": []
+    }
+  }
+}
